@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="12.1" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ABILITAZIONE">
+          <Key>
+            <PropertyRef Name="SIGLA" />
+          </Key>
+          <Property Name="SIGLA" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="MATR_UTENTE" Type="varchar2" MaxLength="20" Nullable="false" />
+          <Property Name="DATA_INS" Type="date" Nullable="false" />
+          <Property Name="DATA_VAR" Type="date" Nullable="false" />
+          <Property Name="RICH_EQUIP_CONDOTTA" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="RICH_EQUIP_CABINA" Type="char" MaxLength="1" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="ABILITAZIONE" EntityType="Self.ABILITAZIONE" Schema="USER_ACM" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ABILITAZIONE">
+          <Key>
+            <PropertyRef Name="SIGLA" />
+          </Key>
+          <Property Name="SIGLA" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="MATR_UTENTE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DATA_INS" Type="DateTime" Nullable="false" />
+          <Property Name="DATA_VAR" Type="DateTime" Nullable="false" />
+          <Property Name="RICH_EQUIP_CONDOTTA" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="RICH_EQUIP_CABINA" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ABILITAZIONEs" EntityType="Self.ABILITAZIONE" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="ABILITAZIONEs">
+            <EntityTypeMapping TypeName="Model.ABILITAZIONE">
+              <MappingFragment StoreEntitySet="ABILITAZIONE">
+                <ScalarProperty Name="SIGLA" ColumnName="SIGLA" />
+                <ScalarProperty Name="MATR_UTENTE" ColumnName="MATR_UTENTE" />
+                <ScalarProperty Name="DATA_INS" ColumnName="DATA_INS" />
+                <ScalarProperty Name="DATA_VAR" ColumnName="DATA_VAR" />
+                <ScalarProperty Name="RICH_EQUIP_CONDOTTA" ColumnName="RICH_EQUIP_CONDOTTA" />
+                <ScalarProperty Name="RICH_EQUIP_CABINA" ColumnName="RICH_EQUIP_CABINA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
