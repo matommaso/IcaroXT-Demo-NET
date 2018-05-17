@@ -11,7 +11,8 @@ namespace OracleSQL
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Text;
+
     public partial class ABILITAZIONE
     {
         public string SIGLA { get; set; }
@@ -20,5 +21,17 @@ namespace OracleSQL
         public System.DateTime DATA_VAR { get; set; }
         public string RICH_EQUIP_CONDOTTA { get; set; }
         public string RICH_EQUIP_CABINA { get; set; }
+
+        public override string ToString()
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.Append(SIGLA).Append(",");
+            builder.Append(MATR_UTENTE).Append(",");
+            builder.Append(DATA_INS).Append(",");
+            builder.Append(DATA_VAR).Append(",");
+            builder.Append(RICH_EQUIP_CONDOTTA).Append(",");
+            builder.Append(RICH_EQUIP_CABINA);
+            return builder.ToString();
+        }
     }
 }
