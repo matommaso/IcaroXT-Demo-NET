@@ -75,17 +75,25 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AbilitazioneWebForm.aspx" />
     <Content Include="Web.config" />
-    <Content Include="WebForm.aspx" />
+    <Content Include="MyNameWebForm.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WebForm.aspx.cs">
-      <DependentUpon>WebForm.aspx</DependentUpon>
+    <Compile Include="AbilitazioneWebForm.aspx.cs">
+      <DependentUpon>AbilitazioneWebForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm.aspx.designer.cs">
-      <DependentUpon>WebForm.aspx</DependentUpon>
+    <Compile Include="AbilitazioneWebForm.aspx.designer.cs">
+      <DependentUpon>AbilitazioneWebForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MyNameWebForm.aspx.cs">
+      <DependentUpon>MyNameWebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyNameWebForm.aspx.designer.cs">
+      <DependentUpon>MyNameWebForm.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

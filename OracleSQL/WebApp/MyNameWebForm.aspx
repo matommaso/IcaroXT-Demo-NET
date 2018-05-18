@@ -15,12 +15,6 @@
         &nbsp;&nbsp; - Show my name:&nbsp;
             <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
         </div>
-        <p>
-            &nbsp;</p>
-        <asp:BulletedList ID="BulletedList1" runat="server" OnClick="BulletedList1_Click">
-        </asp:BulletedList>
-        <p>
-        </p>
     </form>
 </body>
 </html>
