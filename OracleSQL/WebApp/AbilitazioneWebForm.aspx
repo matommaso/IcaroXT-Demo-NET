@@ -14,6 +14,8 @@
         </div>
         <asp:BulletedList ID="BulletedListAB" runat="server" OnClick="BulletedList1_Click">
         </asp:BulletedList>
+        <asp:GridView ID="GridView1" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+        </asp:GridView>
     </form>
 </body>
 </html>

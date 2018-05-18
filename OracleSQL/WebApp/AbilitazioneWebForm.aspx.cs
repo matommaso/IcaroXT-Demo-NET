@@ -26,9 +26,17 @@ namespace WebApp
             OracleSQLServer sqlServer = new OracleSQLServer();
             sqlServer.ExecuteQuery(sqlQuery);
 
-            BulletedListAB.DataTextField = "Sigla";
-            BulletedListAB.DataSource = sqlServer.ExecuteQuery(sqlQuery);
-            BulletedListAB.DataBind();
+            //BulletedListAB.DataTextField = "Sigla";
+            //BulletedListAB.DataSource = sqlServer.ExecuteQuery(sqlQuery);
+            //BulletedListAB.DataBind();
+
+            GridView1.DataSource= sqlServer.ExecuteQuery(sqlQuery);
+            GridView1.DataBind();
+        }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
