@@ -8,10 +8,14 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        ICAROXT <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-         <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" style="height: 26px" />
-        <br />
-        <asp:Label ID="Label" runat="server" Text=""></asp:Label>
+        <div>
+            My name is
+            <asp:TextBox ID="TextBox1" runat="server" OnTextChanged="Button1_Click"></asp:TextBox>
+            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
+        </div>
+        <p>
+            <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+        </p>
     </form>
 </body>
 </html>

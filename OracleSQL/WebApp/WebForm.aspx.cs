@@ -16,7 +16,7 @@ namespace WebApp
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            this.Label.Text = this.TextBox1.Text;
+            Label1.Text = TextBox1.Text;
         }
     }
 }
