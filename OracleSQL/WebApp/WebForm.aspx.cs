@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OracleSQL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -17,6 +18,9 @@ namespace WebApp
         protected void Button1_Click(object sender, EventArgs e)
         {
             Label1.Text = TextBox1.Text;
+            string sqlQuery = "SELECT* from ABILITAZIONE";
+            OracleSQLServer sqlServer = new OracleSQLServer();
+            sqlServer.ExecuteQuery(sqlQuery);
         }
     }
 }

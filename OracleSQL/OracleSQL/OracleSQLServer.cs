@@ -7,12 +7,13 @@ using System.Threading.Tasks;
 
 namespace OracleSQL
 {
-    class OracleSQLServer
+    public class OracleSQLServer
     {
         public static string connectionString = "Data Source = 192.168.11.122:1521/DEVICARO; User Id = user_acm; Password = EBLA;";
 
-        public void ExecuteQuery(String sqlQuery)
+        public List<string> ExecuteQuery(String sqlQuery)
         {
+            List<string> results = new List<string>();
             try
             {
                 OracleConnection connection = new OracleConnection(connectionString);
@@ -22,25 +23,25 @@ namespace OracleSQL
                 cmd.CommandText = sqlQuery;
                 cmd.Connection = connection;
 
-                int rowNumber = 1;
                 OracleDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
+                    StringBuilder sb = new StringBuilder();
                     int fieldCount = dr.FieldCount;
-                    Console.Write(rowNumber++ + " ");
                     for (int i = 0; i < fieldCount; i++)
                     {
-                        Console.Write(dr[i] + " ");
+                        sb.Append(dr[i].ToString()).Append(",");
                     }
-                    Console.WriteLine();
+                    results.Add(sb.ToString());
                 }
-                Console.ReadLine();
                 connection.Dispose();
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
+                throw;
             }
+            return results;
         }
     }
 }

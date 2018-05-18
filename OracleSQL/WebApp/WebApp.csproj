@@ -88,6 +88,12 @@
       <DependentUpon>WebForm.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OracleSQL\OracleSQL.csproj">
+      <Project>{459af03a-753d-42e9-abcb-63e2dabaaa12}</Project>
+      <Name>OracleSQL</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
