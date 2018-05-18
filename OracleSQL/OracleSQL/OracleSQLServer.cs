@@ -1,6 +1,7 @@
 ﻿using Oracle.DataAccess.Client;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,9 +12,9 @@ namespace OracleSQL
     {
         public static string connectionString = "Data Source = 192.168.11.122:1521/DEVICARO; User Id = user_acm; Password = EBLA;";
 
-        public List<string> ExecuteQuery(String sqlQuery)
+        public DataTable ExecuteQuery(String sqlQuery)
         {
-            List<string> results = new List<string>();
+            DataTable dataTable = new DataTable();
             try
             {
                 OracleConnection connection = new OracleConnection(connectionString);
@@ -24,16 +25,20 @@ namespace OracleSQL
                 cmd.Connection = connection;
 
                 OracleDataReader dr = cmd.ExecuteReader();
-                while (dr.Read())
-                {
-                    StringBuilder sb = new StringBuilder();
-                    int fieldCount = dr.FieldCount;
-                    for (int i = 0; i < fieldCount; i++)
-                    {
-                        sb.Append(dr[i].ToString()).Append(",");
-                    }
-                    results.Add(sb.ToString());
-                }
+
+                dataTable.Load(dr);
+
+
+                //while (dr.Read())
+                //{
+                //    StringBuilder sb = new StringBuilder();
+                //    int fieldCount = dr.FieldCount;
+                //    for (int i = 0; i < fieldCount; i++)
+                //    {
+                //        sb.Append(dr[i].ToString()).Append(",");
+                //    }
+                //    results.Add(sb.ToString());
+                //}
                 connection.Dispose();
             }
             catch (Exception e)
@@ -41,7 +46,7 @@ namespace OracleSQL
                 Console.WriteLine(e);
                 throw;
             }
-            return results;
+            return dataTable;
         }
     }
 }

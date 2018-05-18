@@ -11,23 +11,15 @@ namespace OracleSQL
     {
         static void Main()
         {
-            OracleSQLServerEF oracleSQLServerEF = new OracleSQLServerEF();
-            var listAbilitaziones = oracleSQLServerEF.GetABILITAZIONEs();
-            foreach (ABILITAZIONE ab in listAbilitaziones)
+            string sqlQuery = "SELECT* from ABILITAZIONE";
+            OracleSQLServer sqlServer = new OracleSQLServer();
+            DataTable results = sqlServer.ExecuteQuery(sqlQuery);
+
+            for (int i = 0; i < results.Rows.Count; i++)
             {
-                Console.WriteLine(ab.ToString());
+                Console.WriteLine($" {i}  { results.Rows[i]["SIGLA"]}");
             }
             Console.ReadLine();
-
-            //string sqlQuery = "SELECT* from ABILITAZIONE";
-            //OracleSQLServer sqlServer = new OracleSQLServer();
-            //List<string> results = sqlServer.ExecuteQuery(sqlQuery);
-
-            //for (int i = 0; i < results.Count; i++)
-            //{
-            //    Console.WriteLine($" {i}  {results[i]}");
-            //}
-            //Console.ReadLine();
         }
     }
 }
