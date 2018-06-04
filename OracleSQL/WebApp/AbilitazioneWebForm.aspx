@@ -12,10 +12,10 @@
             Show the table ABILITAZIONE
             <asp:Button ID="ButtonAB" runat="server" Text="Ok" OnClick="ButtonAB_Click" />
         </div>
-        <asp:BulletedList ID="BulletedListAB" runat="server" OnClick="BulletedList1_Click">
-        </asp:BulletedList>
         <asp:GridView ID="GridView1" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
         </asp:GridView>
+        <asp:Button ID="Button1" runat="server" Text="Hello" Height="26px" Width="43px" />
+        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
     </form>
 </body>
 </html>
