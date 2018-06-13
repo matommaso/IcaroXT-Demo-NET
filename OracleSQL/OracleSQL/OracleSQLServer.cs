@@ -10,7 +10,7 @@ namespace OracleSQL
 {
     public class OracleSQLServer
     {
-        public static string connectionString = "Data Source = 192.168.11.122:1521/DEVICARO; User Id = user_acm; Password = EBLA;";
+        public static string connectionString = "Data Source = 192.168.11.122:1521/DEVICARO; User Id = user_acm; Password = XXX;";
 
         public DataTable ExecuteQuery(String sqlQuery)
         {
